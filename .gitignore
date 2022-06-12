@@ -1,0 +1,5 @@
+images/
+images/*
+prepare_assets/ntoskrnl.exe
+prepare_assets/ntoskrnl_out/
+prepare_assets/ntoskrnl_out/*

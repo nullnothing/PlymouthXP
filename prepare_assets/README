@@ -1,0 +1,19 @@
+To avoid redistributing copyrighted Microsoft assets with this project,
+you'll need to prepare the required assets for this Plymouth theme yourself.
+
+This directory contains an automated utility to do so, "prepare_assets.py", which requires the following:
+ - Python >= 3
+ - mtpaint (http://mtpaint.sourceforge.net/)
+ - wrestool (https://www.nongnu.org/icoutils/)
+ - Pillow library for Python (https://pypi.org/project/Pillow/)
+ - a copy of "ntoskrnl.exe" from a Windows XP installation
+
+Install mtpaint and icoutils (which provides wrestool), install Python 3 and the Pillow
+library, and finally place a copy of ntoskrnl.exe from XP in the working directory.
+Then, simply run prepare_assets.py with a Python 3 interpreter.
+
+The script works by using mtpaint to apply a colour palette to bitmap files extracted from
+ntoskrnl.exe (by wrestool). Then, those image files are automatically modified to add
+a region of alpha on the "base" image, and a black border around the "progress" image.
+
+The script includes more information about why these changes are made to the images.
