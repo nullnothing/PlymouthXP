@@ -7,13 +7,19 @@ This directory contains an automated utility to do so, "prepare_assets.py", whic
  - wrestool (https://www.nongnu.org/icoutils/)
  - Pillow library for Python (https://pypi.org/project/Pillow/)
  - a copy of "ntoskrnl.exe" from a Windows XP installation
+ - a copy of "lucon.ttf" from a Windows XP installation
 
-Install mtpaint and icoutils (which provides wrestool), install Python 3 and the Pillow
-library, and finally place a copy of ntoskrnl.exe from XP in the working directory.
-Then, simply run prepare_assets.py with a Python 3 interpreter.
+Install the prerequisites (mtpaint, icoutils, Pillow), place the required
+XP files in this directory (ntoskrnl.exe, lucon.ttf), and run prepare_assets.py.
 
 The script works by using mtpaint to apply a colour palette to bitmap files extracted from
 ntoskrnl.exe (by wrestool). Then, those image files are automatically modified to add
 a region of alpha on the "base" image, and a black border around the "progress" image.
+(The scripts comments explain the need for the alpha region & border)
 
-The script includes more information about why these changes are made to the images.
+It then assembles the "native mode" background image from the assets,
+used for displaying boot messages, or entering passwords for encrypted volumes.
+
+Finally, the lucon.ttf file is used to create sprites from the glyphs in the font.
+This is to ensure that the "native mode" text is not anti-aliased before being scaled
+to your screen size.
