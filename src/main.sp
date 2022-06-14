@@ -10,10 +10,6 @@
 // The author(s) of this software are in no way affiliated with or endorsed by Microsoft Corporation,
 // in any capacity. This project is a fan-made labor of love that sees NO PROFITS WHATSOEVER, donations or otherwise.
 
-// At least one sprite has to be defined globally for Plymouth to be happy
-// otherwise we get an error "unexpectedly disconnected from boot status daemon".. what?
-AnnoyingSprite = Sprite();
-
 Window.SetBackgroundColor(0, 0, 0);
 BootScreen = BootScreenNew();
 
