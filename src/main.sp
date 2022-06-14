@@ -10,6 +10,9 @@
 # The author(s) of this software are in no way affiliated with or endorsed by Microsoft Corporation,
 # in any capacity. This project is a fan-made labor of love that sees NO PROFITS WHATSOEVER, donations or otherwise.
 
+# TODO: main.sp should define plymouth callback functions that call
+# functions defined in seperate script parts
+
 Window.SetBackgroundColor(0, 0, 0);
 
 # Define variables
