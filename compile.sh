@@ -5,7 +5,7 @@
 # for ease of development
 
 SCRIPT_PARTS_DIR="./src"
-FILES="main.sp boot.sp native.sp nativetext.sp"
+FILES="boot.sp native.sp nativetext.sp main.sp"
 OUTPUT="PlymouthXP.script"
 
 cd $SCRIPT_PARTS_DIR
