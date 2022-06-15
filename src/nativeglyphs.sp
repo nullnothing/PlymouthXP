@@ -645,12 +645,13 @@ fun InitNativeGlyphs() {
 	NativeGlyphImg["♫"] = Image("glyphs/635.png").Scale(NativeGlyphWidth, NativeGlyphHeight);
 	NativeGlyphImg["ﬁ"] = Image("glyphs/636.png").Scale(NativeGlyphWidth, NativeGlyphHeight);
 	NativeGlyphImg["ﬂ"] = Image("glyphs/637.png").Scale(NativeGlyphWidth, NativeGlyphHeight);
+	NativeGlyphImg["unknown"] = Image("glyphs/unknown.png").Scale(NativeGlyphWidth, NativeGlyphHeight);
 }
 
 fun GetNativeGlyph(char) {
 	glyph = NativeGlyphImg[char];
 	if (!glyph) {
-		return NativeGlyphImg["█"];
+		return NativeGlyphImg["unknown"];
 	} else {
 		return glyph;
 	}

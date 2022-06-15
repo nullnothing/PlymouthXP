@@ -105,6 +105,12 @@ for glyph in lucon_glyphs:
 		draw.text((0, 0), glyph, font=lucon, fill=(255,255,255,255))
 		image.save(filename)
 
+# Create "missing character" symbol
+missing_img = Image.new("RGBA", (8, 14), (0, 0, 0, 0))
+missing_draw = ImageDraw.Draw(missing_img)
+missing_draw.rectangle((1, 1, 6, 10), fill=(0, 0, 0, 0), outline=(255,255,255,255), width=1)
+missing_img.save("../images/glyphs/unknown.png")
+
 # All done. I'm omitting the cleanup step here, and leaving the choice to do so
 # up to the end-user.
 print("All done, assets have been prepared and placed in ../images.")

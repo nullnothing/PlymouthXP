@@ -21,7 +21,7 @@ fun NativeTextNew() {
 	self.Characters = [];
 	for (y=0; y < self.Columns; y++) {
 		for (x=0; x < self.Rows; x++) {
-			self.Characters[x][y] = Sprite(GetNativeGlyph("A"));
+			self.Characters[x][y] = Sprite();
 			self.Characters[x][y].SetX(self.X + (x * NativeGlyphWidth));
 			self.Characters[x][y].SetY(self.Y + (y * NativeGlyphHeight));
 			self.Characters[x][y].SetZ(1);
