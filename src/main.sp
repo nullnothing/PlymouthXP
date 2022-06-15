@@ -11,7 +11,13 @@
 // in any capacity. This project is a fan-made labor of love that sees NO PROFITS WHATSOEVER, donations or otherwise.
 
 Window.SetBackgroundColor(0, 0, 0);
+
+ScaleFactorX = Window.GetWidth() / 640;
+ScaleFactorY = Window.GetHeight() / 480;
+
+InitNativeGlyphs();
 BootScreen = BootScreenNew();
+NativeText = NativeTextNew();
 
 fun RefreshCallback() {
 	if (Plymouth.GetMode() == "boot" || Plymouth.GetMode() == "resume") {

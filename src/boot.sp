@@ -15,18 +15,13 @@ fun BootScreenNew() {
 	self.Opacity = 0;
 	self.FadeSteps = 15;
 
-	// Calculate scaling factor. We want to stretch the boot sequence
-	// to the screen. This requires scaling images & co-ordinates.
-	self.ScaleFactorX = Window.GetWidth() / self.BaseImage.GetWidth();
-	self.ScaleFactorY = Window.GetHeight() / self.BaseImage.GetHeight();
-
 	// I could directly use the screen width & height here, but
 	// I want to follow the pattern of using the scale factors.
-	self.BaseScaledWidth = self.BaseImage.GetWidth() * self.ScaleFactorX;
-	self.BaseScaledHeight = self.BaseImage.GetHeight() * self.ScaleFactorY;
+	self.BaseScaledWidth = self.BaseImage.GetWidth() * ScaleFactorX;
+	self.BaseScaledHeight = self.BaseImage.GetHeight() * ScaleFactorY;
 
-	self.ProgressScaledWidth = self.ProgressImage.GetWidth() * self.ScaleFactorX;
-	self.ProgressScaledHeight = self.ProgressImage.GetHeight() * self.ScaleFactorY;
+	self.ProgressScaledWidth = self.ProgressImage.GetWidth() * ScaleFactorX;
+	self.ProgressScaledHeight = self.ProgressImage.GetHeight() * ScaleFactorY;
 
 	self.BaseImageScaled = self.BaseImage.Scale(self.BaseScaledWidth, self.BaseScaledHeight);
 	self.ProgressImageScaled = self.ProgressImage.Scale(self.ProgressScaledWidth, self.ProgressScaledHeight);
@@ -36,11 +31,11 @@ fun BootScreenNew() {
 	self.BaseSprite.SetZ(1);
 
 	// Progress co-ordinate stuff
-	self.ProgressOriginX = 234 * self.ScaleFactorX;
-	self.ProgressReturnX = (234 + (18 * 8)) * self.ScaleFactorX;
+	self.ProgressOriginX = 234 * ScaleFactorX;
+	self.ProgressReturnX = (234 + (18 * 8)) * ScaleFactorX;
 	self.ProgressCurrentX = self.ProgressOriginX;
-	self.ProgressStepX = 8 * self.ScaleFactorX;
-	self.ProgressY = 354 * self.ScaleFactorY;
+	self.ProgressStepX = 8 * ScaleFactorX;
+	self.ProgressY = 354 * ScaleFactorY;
 
 	self.ProgressSprite.SetImage(self.ProgressImageScaled);
 	self.ProgressSprite.SetOpacity(0);
