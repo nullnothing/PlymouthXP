@@ -107,7 +107,8 @@ missing_draw = ImageDraw.Draw(missing_img)
 missing_draw.rectangle((1, 1, 6, 10), fill=(0, 0, 0, 0), outline=(255,255,255,255), width=1)
 glyph_image.paste(missing_img, (8 * len(lucon_glyphs), 0))
 
-glyph_image.save("../images/glyphs.png")
+glyphs_optimized = glyph_image.quantize(method=Image.Quantize.FASTOCTREE, colors=2)
+glyphs_optimized.save("../images/glyphs.png", optimize=True, quality=0)
 
 # All done. I'm omitting the cleanup step here, and leaving the choice to do so
 # up to the end-user.
