@@ -97,19 +97,20 @@ lucon = ImageFont.truetype("lucon.ttf", 13)
 if not os.path.isdir("../images/glyphs"):
 	os.mkdir("../images/glyphs")
 
+glyph_image = Image.new("RGBA", (8 * (len(lucon_glyphs) + 1), 14), (0,0,0,0))
+glyph_draw = ImageDraw.Draw(glyph_image)
+glyph_draw.fontmode = "1" # Disable antialiasing
 for glyph in lucon_glyphs:
-	filename = "../images/glyphs/%s.png" % str(lucon_glyphs.index(glyph))
-	with Image.new("RGBA", (8, 14), (0, 0, 0, 0)) as image:
-		draw = ImageDraw.Draw(image)
-		draw.fontmode = "1" # Disable antialiasing
-		draw.text((0, 0), glyph, font=lucon, fill=(255,255,255,255))
-		image.save(filename)
+	x = 8 * lucon_glyphs.index(glyph)
+	glyph_draw.text((x, 0), glyph, font=lucon, fill=(255,255,255,255))
 
 # Create "missing character" symbol
 missing_img = Image.new("RGBA", (8, 14), (0, 0, 0, 0))
 missing_draw = ImageDraw.Draw(missing_img)
 missing_draw.rectangle((1, 1, 6, 10), fill=(0, 0, 0, 0), outline=(255,255,255,255), width=1)
-missing_img.save("../images/glyphs/unknown.png")
+glyph_image.paste(missing_img, (8 * len(lucon_glyphs), 0))
+
+glyph_image.save("../images/glyphs.png")
 
 # All done. I'm omitting the cleanup step here, and leaving the choice to do so
 # up to the end-user.

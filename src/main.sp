@@ -15,9 +15,7 @@ Window.SetBackgroundColor(0, 0, 0);
 ScaleFactorX = Window.GetWidth() / 640;
 ScaleFactorY = Window.GetHeight() / 480;
 
-InitNativeGlyphs();
 BootScreen = BootScreenNew();
-NativeText = NativeTextNew();
 
 fun RefreshCallback() {
 	if (Plymouth.GetMode() == "boot" || Plymouth.GetMode() == "resume") {
