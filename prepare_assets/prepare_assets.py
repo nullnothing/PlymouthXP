@@ -94,9 +94,6 @@ lucon_glyphs = [' ', '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',',
 
 lucon = ImageFont.truetype("lucon.ttf", 13)
 
-if not os.path.isdir("../images/glyphs"):
-	os.mkdir("../images/glyphs")
-
 glyph_image = Image.new("RGBA", (8 * (len(lucon_glyphs) + 1), 14), (0,0,0,0))
 glyph_draw = ImageDraw.Draw(glyph_image)
 glyph_draw.fontmode = "1" # Disable antialiasing
